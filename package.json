@@ -5,13 +5,16 @@
     "description": "Simple example of RESTful API with Node.js and passport",
     "private": true,
     "scripts": {
-        "start": "nodemon server.js",
-        "dev": "nodemon start"
+        "start": "SET NODE_ENV=development && nodemon server.js",
+        "prod": "SET NODE_ENV=production && node server.js"
     },
     "dependencies": {
+        "bcryptjs": "^2.4.3",
         "body-parser": "^1.18.x",
+        "dotenv": "^16.0.1",
         "express": "^4.16.x",
         "faker": "^5.1.0",
+        "jsonwebtoken": "^8.5.1",
         "mongoose": "^6.0.x",
         "nconf": "^0.11.4",
         "oauth2orize": "^1.11.x",

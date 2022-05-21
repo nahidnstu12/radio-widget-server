@@ -1,6 +1,7 @@
 var express = require("express");
 var path = require("path");
 var bodyParser = require("body-parser");
+const dotenv = require("dotenv");
 var passport = require("passport");
 const mongoose = require("mongoose");
 
@@ -10,10 +11,11 @@ const swaggerUi = require("swagger-ui-express");
 var radio = require("./routes/radio");
 
 var app = express();
+dotenv.config();
 
 // database connection
 mongoose
-  .connect("mongodb://localhost/stations", {
+  .connect(process.env.MONGO_CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -61,10 +63,10 @@ app.use(function (err, req, res, next) {
   });
   return;
 });
-console.log(process.env.APP_NAME)
+// console.log(process.env.MONGO_CONNECTION_STRING);
 //create server
-app.listen(3100, () => {
-  console.log(`Example app listening on port ${3100}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port ${process.env.PORT}`);
 });
 
 module.exports = app;
