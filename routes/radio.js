@@ -22,7 +22,7 @@ router.get("/health", async (req, res) => {
 // 2. create routing
 /**
  * @swagger
- * /api/station:
+ * /api/stations:
  *   post:
  *     summary: Add a new radio station
  *     parameters:
@@ -43,7 +43,7 @@ router.get("/health", async (req, res) => {
 router.post("/", createStation);
 /**
  * @swagger
- * /api/station:
+ * /api/stations:
  *   get:
  *     summary: Get All radio station
  *     description: All Stations
@@ -54,7 +54,7 @@ router.post("/", createStation);
 router.get("/", fetchAllStation);
 /**
  * @swagger
- * /api/station/{id}:
+ * /api/stations/{id}:
  *   get:
  *     summary: Get single radio station
  *     parameters:
@@ -71,7 +71,7 @@ router.get("/", fetchAllStation);
 router.get("/:id", findSingleStation);
 /**
  * @swagger
- * /api/station/{id}:
+ * /api/stations/{id}:
  *   patch:
  *     summary: Update radio station
  *     parameters:
@@ -99,7 +99,7 @@ router.patch("/:id", updateStation);
 router.put("/:id", updateStation);
 /**
  * @swagger
- * /api/station/{id}:
+ * /api/stations/{id}:
  *   delete:
  *     summary: Delete radio station
  *     parameters:
