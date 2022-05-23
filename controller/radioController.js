@@ -14,7 +14,6 @@ exports.createStation = async (req, res) => {
 exports.fetchAllStation = async (req, res) => {
   try {
     const data = await Station.find().select({
-      _id: 0,
       __v: 0,
     });
     res.status(200).json({ data, total: data.length });
